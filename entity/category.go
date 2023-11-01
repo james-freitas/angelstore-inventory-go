@@ -12,7 +12,7 @@ type Category struct {
 	Name string
 }
 
-func NewCategory(id string, name string) *Category {
+func NewCategory(name string) *Category {
 	return &Category{
 		Id:   uuid.New().String(),
 		Name: name,
