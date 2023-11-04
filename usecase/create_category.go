@@ -1,6 +1,10 @@
 package usecase
 
-import "github.com/james-freitas/angelstore-inventory-go/entity"
+import (
+	"log"
+
+	"github.com/james-freitas/angelstore-inventory-go/entity"
+)
 
 type CreateCategoryInputDto struct {
 	Name string
@@ -24,6 +28,7 @@ func (u *CreateCategoryUseCase) Execute(input CreateCategoryInputDto) (*CreateCa
 	category := entity.NewCategory(input.Name)
 	err := u.CategoryRepository.Create(category)
 	if err != nil {
+		log.Println("CreateCategoryUseCase - Error when calling repository to save the category ", err)
 		return nil, err
 	}
 	return &CreateCategoryOutputDto{

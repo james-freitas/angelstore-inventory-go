@@ -1,0 +1,13 @@
+
+
+POST http://localhost:8000/categories
+Content-Type: application/json
+
+{
+    "name": "Fitness"
+}
+
+###
+
+GET http://localhost:8000/categories
+Content-Type: application/json
