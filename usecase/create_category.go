@@ -18,6 +18,7 @@ type CreateCategoryOutputDto struct {
 type CreateCategoryUseCase struct {
 	CategoryRepository entity.CategoryRepository
 }
+
 func NewCreateCategoryUseCase(categoryRepository entity.CategoryRepository) *CreateCategoryUseCase {
 	return &CreateCategoryUseCase{
 		CategoryRepository: categoryRepository,
